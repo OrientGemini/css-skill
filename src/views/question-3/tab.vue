@@ -114,7 +114,9 @@ export default {
 
   methods: {
     check (item) {
-      this.list.map((item) => item.checked = false)
+      this.list.forEach((item) => {
+        item.checked = false
+      })
       this.$set(item, 'checked', true)
     }
   }

@@ -3,7 +3,7 @@
 	"fromTime": "12:01",
 	"fromStation": "上海",
 	"toTime": "12:01",
-	"toStation": "上海",
+	"toStation": "乌鲁木齐南",
 	"trainNum": "Z204",
 	"seats": [
 	  {
@@ -28,7 +28,7 @@
 	"fromTime": "12:01",
 	"fromStation": "上海",
 	"toTime": "12:01",
-	"toStation": "上海",
+	"toStation": "乌鲁木齐南",
 	"trainNum": "Z204",
 	"seats": [
 	  {
@@ -45,7 +45,7 @@
 	"fromTime": "12:01",
 	"fromStation": "上海",
 	"toTime": "12:01",
-	"toStation": "上海",
+	"toStation": "乌鲁木齐南",
 	"trainNum": "Z204",
 	"seats": [
 	  {
@@ -62,7 +62,7 @@
 	"fromTime": "12:01",
 	"fromStation": "上海",
 	"toTime": "12:01",
-	"toStation": "上海",
+	"toStation": "乌鲁木齐南",
 	"trainNum": "Z204",
 	"seats": [
 	  {
@@ -79,6 +79,52 @@
 	  },
 	  {
 	    "name": "无座",
+	    "price": "385.5"
+	  },
+	  {
+	    "name": "无座",
+	    "price": "385.5"
+	  }
+	]
+  },
+  {
+	"fromTime": "12:01",
+	"fromStation": "上海",
+	"toTime": "12:01",
+	"toStation": "乌鲁木齐南",
+	"trainNum": "Z204",
+	"seats": [
+	  {
+	    "name": "硬座",
+	    "price": "385.5"
+	  },
+	  {
+	    "name": "硬卧",
+	    "price": "695.5"
+	  },
+	  {
+	    "name": "软卧",
+	    "price": "1165.5"
+	  },
+	  {
+	    "name": "无座",
+	    "price": "385.5"
+	  },
+	  {
+	    "name": "无座",
+	    "price": "385.5"
+	  }
+	]
+  },
+  {
+	"fromTime": "12:01",
+	"fromStation": "上海",
+	"toTime": "12:01",
+	"toStation": "乌鲁木齐南",
+	"trainNum": "Z204",
+	"seats": [
+	  {
+	    "name": "硬座",
 	    "price": "385.5"
 	  },
 	  {

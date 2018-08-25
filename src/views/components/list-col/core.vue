@@ -15,20 +15,15 @@
   }
 </style>
 
-<template>
-  <div class="list-col"
-    :class="[
-      colCountClass
-    ]">
-    <slot></slot>
-  </div>
-</template>
-
 <script>
 export default {
   name: 'VeListCol',
 
   props: {
+    tag: {
+      type: String,
+      default: 'div'
+    },
     colCount: {
       type: Number,
       default: 0
@@ -40,13 +35,48 @@ export default {
       let className
 
       if (this.colCount && this.colCount > 0) {
-        className =  `col-${this.colCount}`
+        className = `col-${this.colCount}`
       } else {
         className = ''
       }
 
       return className
+    },
+    gap () {
+      let parent = this.$parent
+      while (parent && parent.$options.componentName !== 'VeListRow') {
+        parent = parent.$parent
+      }
+      return parent ? parent.gap : 0
+    },
+    unit () {
+      let parent = this.$parent
+
+      while (parent && parent.$options.componentName !== 'VeListRow') {
+        parent = parent.$parent
+      }
+
+      return parent ? parent.unit : 'px'
     }
+  },
+
+  render (h) {
+    let classList = []
+    let style = {}
+
+    if (this.gap) {
+      style.paddingLeft = this.gap / 2 + this.unit
+      style.paddingRight = style.paddingLeft
+    }
+
+    if (this.colCountClass) {
+      classList.push(this.colCountClass)
+    }
+
+    return h(this.tag, {
+      class: ['list-col', classList],
+      style
+    }, this.$slots.default)
   }
 }
 </script>

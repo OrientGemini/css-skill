@@ -6,47 +6,44 @@
   }
 </style>
 
-<template>
-  <div class="list-row">
-    <slot></slot>
-  </div>
-</template>
-
 <script>
 export default {
   name: 'VeListRow',
 
-  props: {
-    /* 规定flex项目在水平方向上的对齐方式 */
-    justifyContent: {
-      type: String,
-      default: ''
-    },
-    /* 规定flex项目在垂直方向上的对齐方式 */
-    alignItems: {
-      type: String,
-      default: 'stretch'
-    },
-    hasGapCol: {
-      type: Boolean,
-      default: false
-    },
-    heightN: {
-      type: Number,
-      default: 0
-    },
-    flexDirection: {
-      type: String,
-      default: ''
-    }
-  },
+  componentName: 'VeListRow',
 
-  data () {
-    return {
+  props: {
+    tag: {
+      type: String,
+      default: 'div'
+    },
+    gap: Number,
+    unit: {
+      type: String,
+      default: 'px'
     }
   },
 
   computed: {
+    style () {
+      const style = {}
+
+      if (this.gap) {
+        style.marginLeft = `-${this.gap / 2}this.unit`
+        style.marginRight = style.marginLeft
+      }
+
+      return style
+    }
+  },
+
+  render (h) {
+    return h(this.tag, {
+      class: [
+        'list-row'
+      ],
+      style: this.style
+    }, this.$slots.default)
   }
 }
 </script>
