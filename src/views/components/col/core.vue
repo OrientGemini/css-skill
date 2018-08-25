@@ -71,7 +71,7 @@
 <template>
   <div class="flex-col"
     :class="[
-      flexNClass,
+      flexClass,
       alignSelfClass,
       flexDirectionClass,
       {
@@ -88,7 +88,7 @@ export default {
 
   props: {
     /* 规定flex项目自身在水平方向上的对齐方式 */
-    flexN: {
+    flex: {
       type: Number,
       default: 0
     },
@@ -131,11 +131,11 @@ export default {
 
       return className
     },
-    flexNClass () {
+    flexClass () {
       let className
-      let str = '' + this.flexN
+      let str = '' + this.flex
 
-      if (this.flexN && str) {
+      if (this.flex && str) {
         className = `flex-${str}`
       } else {
         className = ''

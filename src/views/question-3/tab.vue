@@ -94,21 +94,15 @@
 export default {
   name: 'Tab',
 
+  props: {
+    list: {
+      type: Array,
+      default: []
+    }
+  },
+
   data () {
     return {
-      list: [
-        {
-          title: '火车票',
-          code: '1',
-          checked: true
-        },
-
-        {
-          title: '机票',
-          code: '2',
-          checked: false
-        }
-      ]
     }
   },
 
@@ -118,6 +112,8 @@ export default {
         item.checked = false
       })
       this.$set(item, 'checked', true)
+
+      this.$emit('check', item)
     }
   }
 }
