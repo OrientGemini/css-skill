@@ -21,6 +21,7 @@
         & > .list-col {
           padding: .1rem;
         }
+        .item-inner { filter: drop-shadow(0 .02rem .01rem $text-color-lighter-alpha-30); }
       }
       .train-row,
       .seat-row { padding: .2rem; }
@@ -159,13 +160,13 @@ export default {
           {
             title: '火车票',
             code: '1',
-            checked: false
+            checked: true
           },
 
           {
             title: '酒店',
             code: '2',
-            checked: true
+            checked: false
           }
         ],
         check: (item) => {
@@ -181,7 +182,7 @@ export default {
   },
 
   mounted () {
-    this.tab.check(this.tab.list[1])
+    this.tab.check(this.tab.list[0])
   }
 }
 </script>
