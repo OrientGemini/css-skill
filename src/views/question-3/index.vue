@@ -185,4 +185,12 @@ export default {
     this.tab.check(this.tab.list[0])
   }
 }
+
+/*
+ * radial-gradient 实现思路 锯齿
+ * filter
+ * list-layout float clear或flex-wrap: wrap（低版本不支持）
+ * arrow transform skew
+ * ellipsis
+ */
 </script>

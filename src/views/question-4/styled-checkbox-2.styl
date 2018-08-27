@@ -1,0 +1,25 @@
+﻿.styled-checkbox { position: absolute;  opacity: 0;
+  & + label { position: relative; padding: 0; cursor: pointer; }
+  & + label::before { content: ''; display: inline-block;
+    margin-right: .1rem; width: .24rem; height: .24rem; background: $bg-color-lightest;
+  }
+  &:hover + label::before { background: $text-color-primary; }
+  &:focus + label::before { box-shadow: 0 0 0 .03rem rgba(0, 0, 0, 0.12); }
+  &:checked + label::before { background: $text-color-primary; }
+  &:disabled + label { color: $text-color-disabled; cursor: auto; }
+  &:disabled + label::before { box-shadow: none; background: $text-color-disabled; }
+  &:checked + label::after { content: ''; position: absolute; left: .05rem; top: .15rem;
+    width: .02rem; height: .02rem; background: $bg-color-lightest;
+    box-shadow: 
+      .02rem 0 0 $bg-color-lightest,
+      .04rem 0 0 $bg-color-lightest,
+      .06rem 0 0 $bg-color-lightest,
+      .06rem -.02rem 0 $bg-color-lightest,
+      .06rem -.04rem 0 $bg-color-lightest,
+      .06rem -.06rem 0 $bg-color-lightest,
+      .06rem -.08rem 0 $bg-color-lightest,
+      .06rem -.1rem 0 $bg-color-lightest,
+      .06rem -.12rem 0 $bg-color-lightest;
+    transform: rotate(45deg);
+  }
+}

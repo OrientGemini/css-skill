@@ -2,7 +2,7 @@
   <div class="home">
     <header class="header">
       <h2 class="text-center">
-        CSS中的那些雕虫小技
+        CSS中的那些雕虫小技-2
       </h2>
     </header>
 

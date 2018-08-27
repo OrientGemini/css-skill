@@ -1,5 +1,7 @@
 <style scoped lang="stylus" rel="stylesheet/stylus">
   @import '~@/assets/style/var.styl'
+  @import './multiple-circles-loader.styl'
+  @import './multiple-circles-loader-2.styl'
   
   .question-2 { padding-bottom: .6rem;
     .header { padding: .12rem .4rem;
@@ -22,6 +24,7 @@
       .subitem { position: relative;
         .subtitle { position: relative; }
         &:not(:last-child) { padding-bottom: .5rem; }
+        /*&:not(last-child) { padding-bottom: .5rem; background: $bg-color-primary; }*/
         &::before,
         .subtitle::before { content: ''; position: absolute; right: 0; }
         &::before { top: .14rem; height: 100%; border-right: .04rem dashed $text-color-disabled; }
@@ -39,25 +42,46 @@
             margin-right: -.04rem; width: .12rem; height: .12rem;
             box-shadow: 0 0 0 .02rem $bg-color-lightest,
                         0 0 0 .04rem $bg-color-auxiliary;
-            // box-shadow: 0 0 0 .02rem $bg-color-lightest,
-            //             0 0 0 .04rem $bg-color-auxiliary,
-            //             0 0 0 .06rem $bg-color-lightest,
-            //             0 0 0 .08rem $bg-color-auxiliary;
-            // box-shadow: 0 0 0 .02rem $bg-color-lightest,
-            //             0 0 0 .04rem $bg-color-primary,
-            //             0 0 0 .06rem $bg-color-lightest,
-            //             0 0 0 .08rem $bg-color-auxiliary;
+            /*box-shadow: 0 0 0 .02rem $bg-color-lightest,
+                        0 0 0 .04rem $bg-color-auxiliary,
+                        0 0 0 .06rem $bg-color-lightest,
+                        0 0 0 .08rem $bg-color-auxiliary;
+            box-shadow: 0 0 0 .02rem $bg-color-lightest,
+                        0 0 0 .04rem $bg-color-primary,
+                        0 0 0 .06rem $bg-color-lightest,
+                        0 0 0 .08rem $bg-color-auxiliary;*/
             background: $bg-color-auxiliary;
           }
         }
       }
     }
   }
+
+ /* .multiple-circles-container { padding: .8rem; }*/
+  .multiple-circles {
+    margin: .8rem;
+    border-radius: 50%; width: .2rem; height: .2rem;
+    box-shadow: -.2rem -.3rem 0 0 $bg-color-auxiliary,
+    .2rem -.3rem 0 0 $bg-color-auxiliary,
+    -.2rem .3rem 0 0 $bg-color-auxiliary,
+    .2rem .3rem 0 0 $bg-color-auxiliary;
+    background: $bg-color-primary;
+  }
+
+  .css-position { position: relative;
+    margin: .2rem; border: .2rem solid #f00; padding: .2rem; width: 2rem; height: 2rem;
+    box-sizing: border-box;
+    background: #0f0;
+    .absolute { position: absolute; top: 10px; left: 0; right: 0; bottom: 0; background: #000; }
+  }
 </style>
 
 <template>
   <div class="question-2">
-    <ul class="list">
+    <div class="css-position" v-if="true">
+      <div class="absolute"></div>
+    </div>
+    <ul class="list" v-if="true">
       <li v-for="(item, index) in list"
         :key="item.id">
         <header class="header">
@@ -84,6 +108,9 @@
         </ul>
       </li>
     </ul>
+      <div class="multiple-circles" v-if="false"></div>
+    <div class="multiple-circles-loader" v-if="false"></div>
+    <div class="multiple-circles-loader-2" v-if="false"></div>
   </div>
 </template>
 
@@ -162,4 +189,9 @@ export default {
     }
   }
 }
+/*
+ * box-shadow  逗号分隔
+ * absolute
+ * 伪类()、伪元素(https://www.w3.org/TR/selectors-3/#pseudo-elements)
+ */
 </script>
